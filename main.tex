@@ -1,0 +1,110 @@
+\documentclass{cernatsnote}
+\usepackage{siunitx}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{placeins}
+\usepackage{titlesec}
+\usepackage{subfigure}
+\usepackage{float}
+\usepackage{booktabs}
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}    %
+\usepackage{amssymb}
+\usepackage{url}
+
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{rotating,tabularx}
+
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+
+
+%%%%%%%%%%%%%%%% TITLE PAGE %%%%%%%%%%%%%%%% 
+    \title{CHIMERA November 2022 report}
+    \author{
+    	To be completed \; \\		
+    	CERN, CH-1211 Geneva, Switzerland
+    }
+    \date{30.11.2022}
+    \keywords{}
+    \begin{document}
+    \newcommand{\figref}[1]{Fig.\,\ref{#1}}
+    \newcommand{\tabref}[1]{Table\,\ref{#1}}
+    \newcommand{\secref}[1]{Section\,\ref{#1}}
+
+    \maketitle
+    
+    \begin{abstract}
+        \ldots
+    \end{abstract}
+%%%%%%%%%%%%%%%% TITLE PAGE END %%%%%%%%%%%% 
+
+    \begingroup
+    \color{black}
+    \pagebreak
+    \tableofcontents
+    \endgroup
+
+\pagebreak
+
+\section{Introduction} %all
+\input{sections/Introduction.tex}
+
+\section{Beam properties - PS configuration and T8 beam instruments}
+% as set in the PS and measured by the beam instruments
+
+\subsection{Proton Synchrotron beam energy} % Eliott
+% Some intro about how it is defined, including the lookup tables
+% The nice colour showing which energy was used during each moment of the test
+\input{sections/PS_beam_energy.tex}
+
+\subsection{Beam intensity} % Eliott, Kacper
+% RFKO and gain settings throughout the test
+% Intensity measurements on SEC and XION, including intensity vs. gain
+\input{sections/Beam_intensity.tex}
+
+
+\subsection{Spill time profile} % Eliott
+% Gas scintillator, SEC, XION, etc.
+% Diode SMU measurements could be included here, even if introduced later
+\input{sections/Spill_time_profile.tex}
+
+\subsection{Beam spatial profile} %Eliott, Kacper
+% MWPC, Independence of beam profile with beam intensity, impact of energy on the beam shape, “explanation” of the dips (i.e. comparison with and without Montract), etc.
+\input{sections/Beam_spatial_profile.tex}
+
+\section{Beam properties - solid state detector in DUT position}
+% as measured by the silicon diode
+
+\subsection{Setup} % Natalia
+% Montrac, cabling, x-y table, degraders/collimators, etc.
+\input{sections/Setup.tex}
+
+\subsection{Diode as a flux monitor} % Kacper
+% Including notably the correlation with SEC and XION
+\input{sections/Diode_as_flux_monitor.tex}
+
+\subsection{Energy deposition distributions} % Andreas, Natalia
+% « Primary » energies, including mysterious energy changes
+% Comparison with GSI, which we can consider as calibration/reference
+% Impact of degraders
+% Impact of collimation
+\input{sections/Energy_deposition_distributions.tex}
+
+\section{Other measurements}
+\subsection{SRAM memories} % Andrea
+% SEU counts versus beam intensity
+% (note: for actual SEU cross section value/fluence measurements, we would need to accurately know the beam LET, which will in turn likely need to at least partially rely on a combination of simulations and diode measurements. But, we can try to, in first instance, focus on the diode measurements – also because these mysterious energy changes cannot be accounted for in FLUKA, unless understood)
+\input{sections/SRAM_memories.tex}
+
+\subsection{Scintillator} % Andreas
+\input{sections/Scintillator.tex}
+
+\bibliography{references, references_eliott}
+\bibliographystyle{IEEEtran}
+
+\end{document}
