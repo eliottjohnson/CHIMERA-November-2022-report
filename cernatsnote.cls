@@ -63,6 +63,17 @@
     colorlinks=true
 }
 
+
+% %% Acronyms packages: must be loaded after hyperref otherwise the acronyms are not clickable
+% \usepackage[acronym,nomain,toc,nopostdot]{glossaries}
+% \usepackage{glossaries-extra}
+% %\preto\chapter{\glsresetall} resets the acronyms in each chapter to remind the def.
+% \makeglossaries
+% \renewcommand{\glsfirstlongdefaultfont}[1]{\emph{#1}}
+% \setabbreviationstyle[acronym]{long-short}
+% \loadglsentries{Acronyms}
+
+
 \RequirePackage[UKenglish,cleanlook]{isodate} %%% gives dates in non-American format
 \cleanlookdateon %% this is for the english option of isodate
 
